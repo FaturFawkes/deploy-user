@@ -35,7 +35,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            docker stop myprj
-            docker rm myprj
-            docker rmi faturfawkes/users_img
+            docker stop myusers
+            docker rm myusers
+            docker rmi faturfawkes/myusers_img
             docker run --name myusers --link mysql:3306 -d -p 8001:8001 faturfawkes/myusers_img
