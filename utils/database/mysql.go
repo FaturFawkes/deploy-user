@@ -1,7 +1,6 @@
 package database
 
 import (
-	"fmt"
 	"rent-book/config"
 	user "rent-book/features/user/repository"
 	"github.com/labstack/gommon/log"
@@ -10,13 +9,15 @@ import (
 )
 
 func InitDB(c *config.AppConfig) *gorm.DB {
-	str := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-		c.DBUser,
-		c.DBPwd,
-		c.DBHost,
-		c.DBPort,
-		c.DBName,
-	)
+	// str := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+	// 	c.DBUser,
+	// 	c.DBPwd,
+	// 	c.DBHost,
+	// 	c.DBPort,
+	// 	c.DBName,
+	// )
+
+	str := "root:@tcp(mysql:3306)/users?charset=utf8mb4&parseTime=True&loc=Local"
 
 	db, err := gorm.Open(mysql.Open(str), &gorm.Config{})
 	if err != nil {
