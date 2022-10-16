@@ -8,7 +8,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	// "golang.org/x/crypto/bcrypt"
 )
 
 func TestAddUser(t *testing.T) {
